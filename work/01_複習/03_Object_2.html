@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>對象＿相關問題</title>
+    <script>
+      //什麼情況下能使用中括號 ['屬性名'] 的方式
+      /*
+      屬性名包含特殊字符 ： - 空格
+      變量名不確定：
+      屬性名不確定，既然不確定，就放在一個變量裡面去。
+      一旦變量名是在變量裡面，就必須透過中括號去操作
+      */
+        var obj ={}
+        // 給變數添加一個屬性 ：  add type : text/json
+        // p.add type = 'text/json' 有空格 -  點 無法發揮作用
+        obj['add type'] = 'text/json';  // 即使有空格和點也能發揮作用
+        console.log(obj['add type'])
+
+        // 變量名不確定
+        var Person = 'kk';
+        var age = 19;
+        // obj.Person = age; 無法使用
+        obj['person'] = age;
+        console.log(obj)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數據 變數 內存</title>
+    <script>
+            /*
+            1.
+            配置你程式需要的記憶體空間
+            使用配置到的記憶體空間(讀，寫)
+            當不再使用時釋放已被配置的記憶體空間    
+
+            2:
+            釋放內存：
+            1.局部對象，函數執行完自動釋放
+            2.對象，成為垃圾對象 ===> 垃圾回收器回收
+            */ 
+           var a = 3
+           var b = {}
+           var b = null // 釋放對象(堆內存)， var b (棧內存)還存在
+
+           function F(){
+               var c = {}
+           }
+           F() 
+        //  C 是自動釋放， Ｃ 所指向對象是在後面某個時刻由垃圾回收器回收
+
+           
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

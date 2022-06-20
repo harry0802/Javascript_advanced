@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數據 變數 內存</title>
+    <script>
+   // var a 代表什麼
+   var a = {} // a 保存於棧 取得於堆的地址值（對象）
+        var b = a  // a 在棧複製一個Ｂ變數 ， 取得與 a 一樣的 堆的地址值 （相同對象） ，
+                   //當地址指針相同時，儘管他們相互獨立，但是在堆內存中訪問到的具體對象實際上是同一個
+        a = '123'; // a 的基本變數保存於棧
+        b = a;     // b 在棧複製一個新的Ｂ變數，同時擁有a值 ，兩者互不相干涉。
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

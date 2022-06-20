@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=LO, initial-scale=1.0">
+    <title>數據類型-2</title>
+    <script>
+        function Person(name,age){ // 此函式想轉成構造函數,所以把開頭第一個字轉成大寫
+                this.name = name;
+                this.age = age;
+                console.log(name,age)
+        }
+        var p =new Person('a',18);  //根據類型創建的實例對象
+        var g = new Person('b',20)
+        
+        // undefined null ?
+        // 基本屬性
+        var a ,b;        
+        b = null;
+        console.log(a,b)
+
+        // null 使用時機
+        var obj = null; // 預告設定對象
+        obj = [1,2,3];
+        obj = null; // 不需使用時 釋放對象 （被瀏覽器垃圾回收器回收）;
+
+        // variable ＆ data distinguish？？
+
+        
+        var c = {} //以面的{} 是為一個地址值 , c 能夠去取得 該地址的值
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

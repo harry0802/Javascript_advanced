@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <script>
+        /*
+        this:
+        this 是什麼？：
+
+        1.任何函數本質上都是透過某個對象去調用得的，如果沒有直接指定就會是 window
+        2. 所有函數都有一個變量 this , 他的值是調用函數的當前對象
+       
+        如何確定 this 的值 ？：
+
+        test() ==> window
+        p.test() ==> p
+        new test ==> new object
+        p.call(obj)  ==> obj
+
+        */ 
+
+    function Person(color){
+            console.log(this)
+            this.color = color;
+        this.getcolor =function(){
+            console.log(this)
+            return this.color
+        };
+        this.setcolor = function(color){
+            console.log(this)
+            this.color = color;
+
+        }
+    }
+    Person('red'); //this 是誰？  全局對象 window 調用
+
+    var P = new Person('blue'); //this 是誰？ P 對象調用 object
+
+    P.getcolor(); // this 是誰？  P 對象調用 object
+
+    var obj = {};   
+
+    P.setcolor.call(obj,'block')// this 是誰？ obj  
+    /*
+    把Ｐ裡面的 setcolor 函式變成  obj 臨時的方法去調用
+    */
+    var test = P.setcolor;
+    test()  // this 是誰？  this = window 因為直接調用
+
+    function f1(){
+       function f2(){
+            console.log(this)
+        }
+        f2()  // this 是誰？  this = window 因為直接調用
+    };
+    f1()
+
+
+
+    </script>
+</body>
+</html>

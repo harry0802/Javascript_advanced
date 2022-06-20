@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+
+</head>
+<body>
+    <script>
+        /*
+        IIFE (Immediately Invoked Function Expression) 
+        是一個定義完馬上就執行的 JavaScript function (en-US)。
+
+        他又稱為 Self-Executing Anonymous Function (en-US)，也是一種常見的設計模式，包含兩個主要部分：
+        
+        第一個部分是使用Grouping Operator (en-US) () 包起來的 anonymous function。這樣的寫法可以避免裡面的變數污染到 global scope。
+        
+        第二個部分是馬上執行 function 的 expression ()，JavaScript 引擎看到它就會立刻轉譯該 function。
+        */
+
+        /*
+        作用：
+        隱藏實現
+        不會污染外部（全域）命名空間
+        用來編寫ＪＳ 模塊
+         */
+
+       //匿名函數自調用 == IIFE 
+       var a =4;
+       (function(){ 
+           var a =2;
+           console.log(a)
+       })();
+
+       (function(){
+        var a= 1
+        function test(){
+            console.log(++a)
+        }
+         window.$ = function(){ //向外暴露一個全域變數
+                return{
+                    test:test
+            }
+        }
+
+       })()
+        $().test()  
+        /*
+        $ 符號是一個對象
+        $ 執行以後 return 一個對象，而對象裡面有一個 test 的方法
+        */
+
+
+       
+    </script>
+</body>
+</html>

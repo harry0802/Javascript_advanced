@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型鏈屬性問題</title>
+</head>
+<body>
+    <script>
+        /*
+        1.讀取對象屬性值時：會自動到原型鏈查找。
+
+        2.設置對象屬性值時：不會查找原型鏈，如過對象沒有該屬性，會自動添加此屬性設置其值。
+
+        3.方法一般定義在原型中，屬性一般通過構造函數定義在對象身上。
+        */
+       function F(){};
+       F.prototype.a = ('我在這！！');
+
+       var f1 = new F();
+       console.log(f1.a)
+
+        var f2 = new F();
+        f2.a = '我還在這！';
+       console.log(f1.a )
+
+       function Person(name , age){
+            this.name = name
+            this.age = age
+       };
+       
+       Person.prototype.setname= function(name){
+           this.name = name;
+        }
+        console.log( Person.prototype.setname.__proto__ ===  Function.prototype )
+        
+        var p1 = new Person('name' ,19 );
+        p1.setname('xxx');
+        console.log(p1);
+
+        var p2 = new Person('ts' , 22);
+        p2.h = 183;
+        p2.setname('aaa');
+        console.log(p2)
+
+        console.log(p1.__proto__)
+    </script>
+</body>
+</html>

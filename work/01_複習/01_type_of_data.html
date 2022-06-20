@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=LO, initial-scale=1.0">
+    <title>數據類型</title>
+    <script>
+        var a ;
+        console.log(a);
+        console.log(
+            a,
+            typeof a ,
+            typeof a === 'undefined',
+                   a ===  undefined
+        );
+
+        console.log(undefined ==='undefined');
+
+        var b = 3;
+
+        console.log(
+            b,
+            typeof(b) === 'number',
+            b === 'number', 
+            b === 4
+        );
+
+        var c = 'abc';
+
+        console.log(
+           typeof (c) === 'string',
+            typeof c,
+            c
+        );
+
+        var d = true;
+
+        console.log(
+            typeof d === 'boolean'
+
+        );
+
+        var e = null;
+
+        console.log(
+        typeof e,
+        e === null
+
+        )
+
+        // instanceof
+
+        
+        var obj = {
+            arr:['sss',123,console.log ],
+            fun: function(){
+            console.log(arr())
+            },
+
+        }
+        console.log(
+            obj instanceof Object,
+            obj instanceof Array,
+            obj.arr instanceof Array,
+            obj.arr instanceof Object,
+            obj.fun instanceof Function,
+            obj.fun instanceof Object
+
+
+        )
+        //   arr:['sss',123,console.log ], console.log ??
+
+        console.log(typeof obj.arr[2] === 'function'  )
+        // 既然 console.log 是 function 便可值直接呼叫
+
+        obj.arr[2](1)
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

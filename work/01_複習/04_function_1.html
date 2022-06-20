@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函數</title>
+    <script>
+        /*
+        1.什麼是函數？
+        實現特定功能的 Ｎ 條語句的封裝體
+        只有函數可以被執行，其他數據類型不能被執行
+
+        2.為什麼要用函數？
+        提高代碼複用
+        便於閱讀交流
+
+        3.如何定義函數？
+        函數聲明
+        表達式
+
+        4.如何調用執行函示
+        test() 直接調用
+        obj.test() 透過對象調用
+        new test() new 調用
+        test.call/apply(obj) 臨時的 test 成為 obj的方法進行調用
+        5.
+        */ 
+
+
+
+        /*
+        實現以下功能需求
+        1.根據年齡輸出對應訊息
+        2.< 18 輸出未達標準
+        3.> 60 輸出超出標準
+        4. 其他輸出符合標準
+        */ 
+       function showinfo(age){
+           if(age < 18){
+           console.log('未達標準')
+           }
+           else if(age >= 60){
+           console.log('超出標準')
+           }
+           else (
+               console.log('符合標準')
+           )
+       }
+       showinfo(17)
+       showinfo(25)
+       showinfo(60)
+
+       //變數聲明
+       function fn1(){ 
+            console.log(fn1())
+       }
+       //表達式
+       var fn2 = function (){
+        console.log(fn2())
+       }
+
+       var obj ={}
+       function test2(){
+           this.name = '王二狗'
+       }
+    //    obj.test2() 點無法使用，因為對象裡沒有這屬性
+       test2.call(obj) // 可以讓一個函數成為，指定任意對象的方法進行調用
+       console.log(obj)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instanceof</title>
+</head>
+<body>
+    <script>
+        /*
+        1.
+        instanseof 如何判斷？
+        表達式： Ａ instanseof Ｂ
+        如果Ｂ函式的顯示原型在Ａ的原型鏈裡面  是則返回/true  不是則返回/false
+        A 實例對象 Ｂ 構造函數
+        2.
+        Function 是自己通過 new 自己創見的實例
+
+
+        */
+
+        function Foo(){};
+        var foo = new Foo();
+
+        console.log(foo instanceof Foo);//true
+        console.log(foo instanceof Object);//true
+        console.log(foo.__proto__ instanceof Object)//true
+        console.log(foo instanceof Object)//true
+
+        
+        console.log(Object instanceof Function)//true
+        console.log(Object instanceof Object)//true
+        console.log(Function instanceof Function)//true
+        console.log(Function instanceof Object)//true
+        console.log(Object instanceof Foo)//false
+
+
+
+    </script>
+</body>
+</html>

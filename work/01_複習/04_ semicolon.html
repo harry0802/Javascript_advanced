@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於分號</title>
+</head>
+<body>
+    <!-- 
+        * js 一條語句後面可以不加分號
+        * 是否加分號是風格問題，沒有應不應該，只有喜不喜歡。
+        * 在下面兩種情況下不加上分號會有問題
+         1.小括號開頭的前一條語句 
+         2.中括號開頭的前一條語句
+        * 解決辦法 ： 在行首加分號
+        * 
+     -->
+    <script>
+        /*
+        在匿名函數上若不加上分號，ＪＳ會自動理解成
+        var a = 1(function(){console.log(a)})()
+        此時會進行報錯
+        */
+        var a = 1;
+        (function(){
+            console.log(a)
+        })()
+
+        /*
+        在中括號若不加上分號，ＪＳ會自動理解成
+        var b =4 [1,2].forEach(function(){})()
+        */ 
+        var b =4;
+        [1,2].forEach(function(){
+
+        })()
+    </script>
+</body>
+</html>

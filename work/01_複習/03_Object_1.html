@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>對象</title>
+    <script>
+        /*
+        什麼是對象:
+        多個數據的封裝體
+        一個對象代表現實的一個事物
+
+        為什麼要用對象:
+        統一管理多個數據
+
+        對象的組成:
+        屬性名 (字符串),屬性值（任意）組成
+        方法：一種特別的屬性（屬性值是函式）
+
+        如何訪問對象數據:
+        . 屬性  (點) :編碼簡單，有時不能用
+        ['屬性名'] (中括號 )：編碼麻煩，能通用
+
+        */
+
+        var obj = {
+            name:"a",
+            age:18,
+            setname:function(name){
+                this.name = name
+            },
+            setage:function(age){
+                this.age = age
+            }
+        }
+        obj.setname('s')
+        obj['setage'](23)
+        console.log(obj.name,obj['age'])
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

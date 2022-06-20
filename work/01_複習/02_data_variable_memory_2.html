@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數據 變數 內存</title>
+    <script>
+        /*
+        當Ｎ個引用變量值指向同一個對象，通過一個變量去修改對象內部的數據，其他所有變量看到的都是修改後的數據。
+        兩個引用變量指向同一個對象，其中一個引用變量指向另一個對象，另一個引用變量依然指向前一個對象。
+        */
+        var a = {name:'a'};
+         var b = a;
+         b.name = "b";
+         console.log(a)
+
+        function f(obj){
+           a.name = 'c'
+           b.age = 18
+        }f(b)
+        console.log(a)
+
+        
+        var a1 = {name:'sad'}
+        var b1 = a1
+        var a1 = {age:18}
+        console.log(b1)
+        console.log(a1)
+        /*
+        雖然引用函數是 Ｂ 獲得同一個地址值
+        但裡面的 obj 又創建了一個對象名為obj的對象 ！
+        所以脫離了原本的地址值，而區域對象在函數結束後就被釋放了
+        */
+        function f(obj){
+            obj ={}
+            
+        }
+        f(b);
+        console.log(b)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

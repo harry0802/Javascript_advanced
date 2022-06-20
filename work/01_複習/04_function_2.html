@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>點擊測試</title>
+</head>
+<body>
+<button class="btn">點擊按鈕</button>    
+<script>
+    /*
+
+    什麼是回調函數 ？
+    1.自己定義
+    2.自己沒有調用
+    3.最後它執行了
+
+    常見的回調函數：
+    
+    dom 回調函數
+    定時器回調函數
+    ajax 回調函數
+    生命週期回調函數
+
+    */ 
+    var btn = document.querySelector(".btn");
+    btn.onclick = function(){
+        alert('點我幹嘛？')
+    }
+
+    setTimeout(function(){
+        alert('嘿嘿嘿')
+    },2000)
+</script> 
+</body>
+
+</html>

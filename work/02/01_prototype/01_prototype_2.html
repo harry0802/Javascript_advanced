@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顯示原型 與 隱藏原型</title>
+</head>
+<body>
+<script>
+/*
+    1.每個 函數(function) 都有一個 prototype， 即顯示原型 （屬性）。
+
+    2.每個實例對象都有一個 ＿proto＿ ，可稱為隱式原型 （屬性）。
+
+    3.對象的“隱式原型”的值為其“對應”構造函數的“顯示原型”的值。
+
+    4.內存結構
+
+    5.總結：
+    ＊ 函數的 prototype 屬性 ： 在創建時自動添加的，默認值是一個空的 object對象屬性。
+
+    ＊ 對象的 ＿proto＿ 屬性 ： 創建對象時自動添加，默認值為構造函數的 prototype 屬性值。
+
+    ＊
+*/
+    function F(){};  // 內部語句： this.prototype === {} 
+
+    //1.每個 函數(function) 都有一個 prototype， 即顯示原型 （屬性）。
+    // prototype 屬性並非自己添加，而是由函數創建時自動添加
+    
+    console.log(F.prototype);
+
+    //2.每個實例對象都有一個 ＿proto＿ ，可稱為隱式原型 （屬性）。
+
+    var f = new F(); //內部語句 this.prototype === f.__proto__。
+
+    console.log(f.__proto__)
+    
+    // 3.對象的“隱式原型”的值為其“對應”構造函數的“顯示原型”的值。
+    // __proto__ ， prototype 裡面都保存地址值 （引用變量）
+    console.log(F.prototype === f.__proto__);
+
+    // 給原型添加方法
+    F.prototype.test = function(){
+        console.log('我在這！！！')
+    }
+
+    f.test();
+
+</script>
+</body>
+</html>

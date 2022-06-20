@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數據 變數 內存</title>
+    <script>
+
+       /*
+       Q: 在ＪＳ 調用函數時，傳遞的變量變數，是值傳送還是引用傳送
+        A:
+        1.都是值傳送（基本值｜地址值）
+        2.可能是值傳送，也可能是引用傳送（地址值）
+       */
+        // 作用域不一樣  console.log(a) 輸出結果也不一樣
+        var a = 1
+        function f(a){
+           a = a+1 
+        console.log(a)
+
+        }
+        f(a);
+        console.log(a)
+        
+        // obj 拿到了 全域對象的地址值 可以輸出該對象的屬性
+        function F(obj){
+            console.log(obj.name)
+        }
+        var obj={name:'s'}
+        F(obj)
+        console.log(obj.name)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
