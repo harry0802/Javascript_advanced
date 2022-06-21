@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>執行上下文</title>
+</head>
+<body>
+    <script>
+        /*
+        1.代碼分類
+            ＊ 全局代碼
+            ＊ 函數代碼
+        
+        2.全局執行上下文
+            ＊ 在執行全局代碼前，確定將 window 確定為全局執行上下文。
+            ＊ 對全局數據進行預處理。
+        ＊ var 定義一個全局變量 ==> undefined。
+        ＊ function 聲明的全局函數 ==> 賦值（function） ，添加 window 的方法。
+        ＊ this ==> 賦值（window）
+        * 開始執行全局代碼
+
+        3.函數執行上下文
+        ＊ 在調用函數，準備執行函數體之前，創建對應的函數上下文執行對象。
+        ＊對局部數據進行預處理
+            ＊ 行參變量  ==> 賦值（實參） ==> 添加為執行上下文的對象。
+            ＊ arguments ==> 復職（實參列表），添加執行上下文的屬性
+            ＊ var 定義一個全局變量 ，添加執行上下文的屬性。
+            ＊ function 聲明的函數 ==> 賦值（function），添加為執行上下文的方法
+            ＊ his ==> 賦值（調用函數的對象）
+            ＊ 開始執行函數體代碼
+        */
+       //全局執行上下文
+       console.log(a1 , a1 === window.a1)
+       console.log(a2 , a2 === window.a2)
+       console.log(this , this === window)
+        window.a2()//去 window 裡找 function a2
+        var a1 =3;
+       function a2(){
+           console.log('a2')
+       }
+       console.log(a1)
+
+       //函數執行上下文
+       
+       function f1(a1){
+           console.log(a1)
+           console.log(a2)
+           console.log(f2)
+           console.log(arguments) // 參數 （類數組，偽數組） ： 2,3值 ，在函數執行之前 arguments 就已經存在了，且帶有值
+           console.log(this)
+           f2()
+           var a2 =3;
+           function f2(){
+            console.log('a3')
+           }
+       }f1(2,3)
+       //調用才會創建局部對象 ， 執行完畢自動釋放
+
+    </script>
+</body>
+</html>
