@@ -9,8 +9,42 @@
 <body>
     <script>
         /*
-        1.變量提升：
+        1.變量聲明提升：
+        通過 var 定義（聲明）的變量 ，在定義語句之前就可以訪問到。
+        值：undefined
+
+        2.函數聲明提升
+        通過函數 function 聲明的語句，在之前就可以調用。
+        值：函數定義（對象）
+
+        3.變量提升，函數提升，是如何產生？
+
+
+
         */ 
+        // 變量提升
+        var a= 10;
+        function ff(){
+            console.log(a)
+            var a =20;
+        }ff()
+
+        console.log(b);
+        var b = 10;
+
+        // 函數提升
+        f()
+
+        function f(){
+            console.log('a')
+        }
+        // 變量提升  
+        f1()
+
+        var f1 = function(){
+            console.log('f1')
+        }
+
     </script>
 </body>
 </html>
