@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>執行上下文棧</title>
+</head>
+<body>
+    <script>
+        /*
+        1.在全局執行代碼前，ＪＳ會創建一個棧來儲存所有的執行上下文對象。
+        2.在全局執行上下文（window）確定後，將其添加到棧中（入棧）。
+        3.在函數執行上下文創建後，將其添加到棧中（入棧）。
+        4.在當前函數執行完後，將棧項的對象移除（出棧）。
+        5.當所有的代碼執行完畢後，棧只剩下（window）。
+
+
+        栈和队列，严格意义上来说，也属于线性表，因为它们也都用于存储逻辑关系为 "一对一" 的数据
+        使用栈结构存储数据，讲究“先进后出”，即最先进栈的数据，最后出栈；
+        使用队列存储数据，讲究 "先进先出"，即最先进队列的数据，也最先出队列。
+        */ 
+        var a = 10 
+        var f1 = function(x1){
+            var b = 5
+            f2(x1 + b)
+        }
+
+        var f2 = function(f2){
+            var c = 10
+            console.log(a + c + f2)
+        }
+        f1(10)
+    </script>
+</body>
+</html>
