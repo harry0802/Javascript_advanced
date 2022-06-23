@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測試題目</title>
+</head>
+<body>
+    <script>
+        /*
+        Q1:console.log(typeof a)  = ?
+        hoisting
+        先變量提升，在函數提升。
+        */
+        function a(){}
+        var a ;
+        console.log(typeof a) 
+
+        /*
+        Q2: console.log(b) ?
+        hoisting
+        */
+        if(!(b in window)){
+            var b = 1;
+        }
+        console.log(b);
+
+        /*
+        Q3: c?
+        變數提升
+        函數提升
+        變數賦予值
+        調用函數 此時的函數並非 function
+        */ 
+       var c = 1;
+       function c(c){
+       console.log(c);
+    };
+        c(2)
+
+    </script>
+</body>
+</html>

@@ -9,6 +9,10 @@
 </head>
 <body>  
     <script>
+        /*
+        總共生出幾個上下文
+        個別輸出值？
+        */ 
         console.log(i);
         var i = 1;
         foo(1);
@@ -17,7 +21,7 @@
                 return;
             };
             console.log('foo:begin' + i);
-            foo(i+1);
+            foo(i+1);// 遞迴 :直接遞迴 (direct recursion)·
             console.log('foo:end' + i)
         }
         console.log('global end' + i)
