@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域與執行上下文</title>
+</head>
+<body>
+    <script>
+        /*
+        1. 區別 1.
+            ＊全局作用域之外，每個函數都會創建自己的作用域，作用域在函數定義之前就已經確定了，而不是在函數調用時產生的。
+            ＊全局執行上下文的環境是在全局作用域之後，ＪＳ 代碼馬上執行之前創建。
+            ＊函數執行上下文環境是在函數調用時，函數體代碼執行之前創建
+
+        2. 區別 2.
+            ＊作用域是靜態的，只要函數定義好了就一直存在，且不在變化。
+            ＊執行上下文是動態的，調用函數時創建，函數調用結束時 上下文環境就會自動被釋放。
+
+        3. 聯繫
+            ＊上下文環境（對象）是從屬於所在的作用域。
+            ＊全局上下文環境 ==> 全局作用域。
+            ＊函數上下文環境 ==> 對應函數的使用域
+        
+        */ 
+    </script>
+
+</body>
+</html>

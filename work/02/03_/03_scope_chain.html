@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域鏈</title>
+</head>
+<body>
+        <script>
+            /*
+            1.理解：
+                ＊ 多個上下級關係的作用域形成的鏈，他的方向是重下至上（由內到外）
+                ＊ 查找變量就是沿著作用域鏈查找的
+
+            2.查找一個變量的查找規則
+                ＊ 在當前作用域下的執行上下文中查找的對應屬性 ，如果有直接返回 ，否則進入 2
+                ＊ 在上一級作用域的執行上下文中查找的對應屬性 ，如果有直接返回 ，否則進入 3
+                ＊ 再次執行 2 的相同操作 ， 直到全局作用域 ， 如果還找不到就拋出找不到的異常
+
+            */
+           function f1(){
+               var a =1;
+               function f2(){
+                   var b = 2
+                    var c =3;
+                    console.log(a,b,c)
+                    console.log(d)
+                   }
+                   f2()
+           }
+           f1()
+        </script>
+</body>
+</html>
