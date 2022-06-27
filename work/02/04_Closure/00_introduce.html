@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>引用</title>
+</head>
+<body>
+    <button>按鈕一</button>
+    <button>按鈕二</button>
+    <button>按鈕三</button>
+
+    <script>
+        var btns =document.getElementsByTagName('button')
+        var i;
+        var length = btns.length
+
+        // for(i = 0  ; i < length ; i++){
+        //   var btn = btns[i];
+        //   btn.index = i;
+        //   btn.onclick = function(){
+        //       alert('第' + (this.index + 1)  + '個')
+        //   }
+        // }
+
+        for(i = 0 ; i < length ; i++){
+            (function(i){
+                var btn = btns[i];
+                btn.onclick = function(){
+                    alert('第' + (i + 1) + '個')
+                }
+            })(i)
+        }
+    </script>
+</body>
+</html>
