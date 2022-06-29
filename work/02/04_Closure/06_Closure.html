@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>閉包缺點與解決</title>
+</head>
+<body>
+    <script>
+        /*
+        1.缺點
+            ＊ 函數執行完後，函數內的局部變量沒有釋放，佔用內存時間會變長
+            ＊ 容易照成內存洩漏
+        2.解決
+            ＊ 能不用閉包就不用
+            ＊ 即時釋放
+        */
+       function a1(){
+         var arr = [100000]
+         return function a2(){
+            console.log(arr)
+         }
+       }
+       var a = a1();
+       a();
+       a = null;// 釋放內部函數成為垃圾對象 ===> 回收閉包
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>閉包的生命週期</title>
+</head>
+<body>
+    <script>
+        /*
+        1.產生：在嵌套內部函數定義執行完時就產生（不是在調用）
+        2.死亡：在嵌套的內部函數成為垃圾對象時。
+        */
+       function a1(){
+            var myvar =1;
+            return function a2(){
+                myvar ++
+                console.log(myvar)
+            }
+       }
+       var a = a1();
+       a()
+       a()
+       var a = null; // 閉包死亡（包含閉包的函數對象成為垃圾對象）
+
+
+    </script>
+</body>
+</html>

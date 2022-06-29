@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常見的閉包</title>
+</head>
+<body>
+    <script>
+        /*
+        1.將函數作為另一個格函數得的返回值
+        2.將函數作為實參傳遞給另一個函數調用
+        */ 
+        
+        function f1(){
+            var a = 2
+            function f2(){
+                a++
+                console.log(a)
+            }
+            return f2
+        }
+        var f = f1();
+        f()
+        f()
+console.log('-----------')
+        function a1(){
+             var arr = [];
+             var i;
+             for(i = 0; i < 3; i++){
+                arr.push
+                (function(){
+                    console.log(i);
+                })
+             }
+             return arr;
+        }
+        var a = a1();
+        a[0]()
+        a[1]()
+        a[2]()
+console.log('-----------')
+        function b1(){
+            var arr =[];
+            var i;
+            for(i = 0; i < 3; i++){
+                let j = i ;
+                arr.push(function(){
+                        console.log(j)
+                    })
+            }
+            return arr
+        }
+        var a2 = b1();
+        a2[0]();
+        a2[1]();
+        a2[2]();
+console.log('-----------')
+        function c1(){
+            var arr =[];
+            var i = 0;
+            for(i ; i < 3; i++){
+               arr.push(
+                (function(x){
+                return function(){
+                    console.log(x)
+                }
+                }(i))
+               )
+            }
+            return arr
+        }
+        var c = c1();
+        c[0]();
+        c[1]();
+        c[2]();
+
+
+       
+    </script>
+</body>
+</html>
