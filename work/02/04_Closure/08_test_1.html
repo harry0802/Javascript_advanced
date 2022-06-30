@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測驗</title>
+</head>
+<body>
+    <script>
+        var name = 'the window';
+        var obj = {
+            name:'the object',
+            getfun:function(){
+                return function(){
+                    return this.name
+                }
+            }
+        }
+
+        var obj2 = {
+            name:'the object',
+            getfun:function(){
+                var thet = this
+                return function(){
+                    return thet.name
+                }
+            }
+        }
+        console.log(obj.getfun()());
+        console.log(obj2.getfun()());
+
+        function fun(n,o){
+            console.log(o);
+            return{
+               fun:function(m){
+                return fun(m,n);
+               }
+            }
+            
+        }
+        console.log('--------')
+        var f2 = fun(0); f2.fun(1); f2.fun(2); f2.fun(3);
+        console.log('--------')
+        var f3 = fun(0).fun(1).fun(2).fun(3);
+        console.log('--------')
+        var f4 = fun(0).fun(1); f4.fun(1);f4.fun(2)
+    </script>
+</body>
+</html>
